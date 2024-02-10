@@ -98,6 +98,7 @@ public class LinkedRecords<E> implements Records<E> {
         };
     }
 
+    @Override
     public String toString() {
         StringBuilder str = new StringBuilder();
         for (Iterator<Node<E>> iter = iterator(); iter.hasNext(); ) {

@@ -2,7 +2,7 @@ package customlist;
 
 import java.util.Iterator;
 
-public interface Records<E> {
+public interface Records<E> extends Iterable<Node<E>> {
 
     int getSize();
 
@@ -15,6 +15,4 @@ public interface Records<E> {
     void addLast(E e);
 
     boolean isEmpty();
-
-    Iterator<Node<E>> iterator();
 }
