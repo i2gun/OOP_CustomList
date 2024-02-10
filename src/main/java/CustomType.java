@@ -16,4 +16,8 @@ public class CustomType {
         return phoneNumber;
     }
 
+    @Override
+    public String toString() {
+        return getAccountName();
+    }
 }

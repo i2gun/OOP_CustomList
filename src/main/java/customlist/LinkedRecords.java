@@ -98,12 +98,12 @@ public class LinkedRecords<E> implements Records<E> {
         };
     }
 
-    public String toString(Function<E, String> func) {
+    public String toString() {
         StringBuilder str = new StringBuilder();
         for (Iterator<Node<E>> iter = iterator(); iter.hasNext(); ) {
             Node<E> item = iter.next();
             E elem = item.getItem();
-            str.append(func.apply(elem));
+            str.append(elem.toString());
 
             if (iter.hasNext()) {
                 str.append(", ");
