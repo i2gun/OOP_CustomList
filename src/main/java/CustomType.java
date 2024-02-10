@@ -1,7 +1,7 @@
 public class CustomType {
 
-    Integer phoneNumber;
-    String accountName;
+    private final Integer phoneNumber;
+    private final String accountName;
 
     CustomType(String name, Integer number) {
         phoneNumber = number;

@@ -1,7 +1,5 @@
 package customlist;
 
-import java.util.function.Function;
-
 public class Node<E> {
 
     private final E item;
