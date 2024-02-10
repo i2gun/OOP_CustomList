@@ -5,7 +5,7 @@ import java.util.function.Function;
 
 public class LinkedRecords<E> implements Records<E> {
 
-    private int size = 0;
+    private int size;
     private Node<E> first;
     private Node<E> last;
 
@@ -28,6 +28,20 @@ public class LinkedRecords<E> implements Records<E> {
     @Override
     public int getSize() {
         return size;
+    }
+
+    @Override
+    public E getItem(int i) {
+        int index = 0;
+        Node<E> item = null;
+        for (Iterator<Node<E>> iter = iterator(); iter.hasNext(); ) {
+            item = iter.next();
+            if (index == i) {
+                break;
+            }
+            index++;
+        }
+        return item != null ? item.getItem() : null;
     }
 
     @Override
@@ -63,7 +77,7 @@ public class LinkedRecords<E> implements Records<E> {
 
     @Override
     public boolean isEmpty() {
-        return false;
+        return first == null;
     }
 
     @Override
@@ -93,8 +107,6 @@ public class LinkedRecords<E> implements Records<E> {
 
             if (iter.hasNext()) {
                 str.append(", ");
-            } else {
-                str.append("\n");
             }
         }
         return str.toString();
